@@ -36,9 +36,6 @@ public class TaskService {
     }
 
 
-    /**
-     * Find all books
-     */
     public List<TaskDTO> findAllTasksByName(String name) {
 
         User user = userRepository.findByName(name).orElseThrow(
