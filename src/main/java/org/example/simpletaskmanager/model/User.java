@@ -13,9 +13,6 @@ public class User {
     @Column(name = "id", nullable = false, updatable = false, columnDefinition = "serial")
     private Long id;
 
-    /**
-     * User name
-     */
     @Column(name = "name")
     @NotBlank
     @Size(min = 2, max = 100)

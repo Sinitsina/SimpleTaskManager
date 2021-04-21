@@ -15,26 +15,16 @@ public class Task {
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
-
-    /**
-     * User
-     */
     @ManyToOne
     @JoinColumn(name = "user_id")
     @NotBlank
     private User user;
 
-    /**
-     * User name
-     */
     @Column(name = "name")
     @NotBlank
     @Size(min = 2, max = 1000)
     private String name;
 
-    /**
-     * Date of task
-     */
     @Column(name = "task_date", columnDefinition = "DATE")
     @NotBlank
     private Date date;
