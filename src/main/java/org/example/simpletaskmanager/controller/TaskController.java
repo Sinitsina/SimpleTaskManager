@@ -25,7 +25,6 @@ public class TaskController {
 
     @GetMapping("/all-tasks")
     public ResponseEntity<List<TaskDTO>> findAllTasks(@RequestParam(name = "name") String name) {
-
         return new ResponseEntity<>(taskService.findAllTasksByName(name), HttpStatus.OK);
     }
 }

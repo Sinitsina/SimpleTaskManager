@@ -37,13 +37,12 @@ public class TaskService {
 
 
     public List<TaskDTO> findAllTasksByName(String name) {
-
         User user = userRepository.findByName(name).orElseThrow(
-                ()->new IllegalArgumentException("User " + name + " was not found."));
+                () -> new IllegalArgumentException("User " + name + " was not found."));
 
-        List<Task> result = taskRepository.findAllByUserId(user.getId()).orElseThrow(
-                ()->new IllegalArgumentException("There aren't any tasks for user " + name));
-        return taskMapper.taskListToDTOTaskList(result);
+        List<Task> taskList = taskRepository.findAllByUserId(user.getId()).orElseThrow(
+                () -> new IllegalArgumentException("There aren't any tasks for user " + name));
+        return taskMapper.taskListToDTOTaskList(taskList);
 
     }
 
